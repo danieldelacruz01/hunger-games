@@ -1,0 +1,21 @@
+{
+  "name": "personal-project",
+  "version": "1.0.0",
+  "description": "food suggestions",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieldelacruz01/personal-project.git"
+  },
+  "author": "danieldelacruz01",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danieldelacruz01/personal-project/issues"
+  },
+  "homepage": "https://github.com/danieldelacruz01/personal-project#readme"
+}
