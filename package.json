@@ -1,21 +1,18 @@
 {
   "name": "personal-project",
-  "version": "1.0.0",
-  "description": "food suggestions",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "test/test.js"
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "morgan": "~1.6.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danieldelacruz01/personal-project.git"
-  },
-  "author": "danieldelacruz01",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/danieldelacruz01/personal-project/issues"
-  },
-  "homepage": "https://github.com/danieldelacruz01/personal-project#readme"
+  }
 }
