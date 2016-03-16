@@ -13,6 +13,8 @@ Provides cafe/restaurant recommendations based on a set of criteria specified by
 
 Similar functionality to [wtfsigte](http://wtfsigte.com/). Food suggestions based on a user's location
 
+[Architecture](https://www.dropbox.com/sc/mg4tr1ah7v4grpv/AACg8GC0HLMAx3SSGOkpdyJRa)
+
 ## Stretch features (in order of most preferred - least preferred):
 
 - Filtering by various criteria
@@ -21,4 +23,7 @@ Similar functionality to [wtfsigte](http://wtfsigte.com/). Food suggestions base
 - Responsive UI using bootstrap
 - Automatically determine user's location using Google Maps geolocation 
 - Adjustable search radius based on selected method of transport (walking, driving/commuting)
+
+##Wireframes
+[Wireframes](https://www.dropbox.com/sh/hi4o7h97a2o3xcy/AAAzjgz8PP4AyqrZInR2GYbya?dl=0)
 
