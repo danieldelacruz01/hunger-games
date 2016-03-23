@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 	// }
 
 	searchZomato(req.query, function(result) {
-		var resultaurants = []
+		var resultaurants = {'restaurants':[]}
 
 		for (var i = 0; i < result.restaurants.length; i++){
 			var resultaurant = result.restaurants[i].restaurant
@@ -42,7 +42,7 @@ router.get('/', function(req, res, next) {
 				"photos": resultaurant.photos_url,
 				"menu": resultaurant.menu_url
 			}
-			resultaurants.push(resultsObj)
+			resultaurants.restaurants.push(resultsObj)
 		}
 
 		res.send(resultaurants)

@@ -3,6 +3,12 @@ var request = require('superagent')
 var h = require('hyperscript')
 
 $(document).ready(function() {
+
+	navigator.geolocation.getCurrentPosition(function(pos){
+		$('#lat').val(pos.coords.latitude)
+		$('#lon').val(pos.coords.longitude)
+	})
+
 	var query = {
 		count: 3,
 		radius: 500,
@@ -31,13 +37,17 @@ $(document).ready(function() {
 		)
 	}
 
-	function appendResults(resArr){
-		for (var i = 0; i < resArr.length; i++){
+	function appendResults(resObj){
+		for (var i = 0; i < resObj.restaurants.length; i++){
 			$('div#results').append(		
-				h('h3', resArr[i].name),
+				h('h3', resObj.restaurants[i].name),
+				h('p', resObj.restaurants[i].location.address),
 				h('ul',
-					h('li', 'Cuisine: '+resArr[i].cuisines),
-					h('li', 'Rating: '+resArr[i].rating)
+					h('li', 'Cuisine: '+resObj.restaurants[i].cuisines),
+					h('li', 'Rating: '+resObj.restaurants[i].rating),
+					h('li', 'Menu: ',
+						h('a','Click here',{'href':resObj.restaurants[i].menu})
+					)
 				)
 			)
 		}
