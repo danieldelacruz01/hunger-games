@@ -1,4 +1,4 @@
-# personal-project
+# hunger-games
 
 Provides cafe/restaurant recommendations based on a set of criteria specified by the user.
 
