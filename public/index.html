@@ -3,16 +3,18 @@
   <head>
     <title>Client</title>
 		<script src="bundle.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvUJeR4JdqLtODVp9R5suxIeHXKbi1aWo&libraries=places"></script>
   </head>
   <body>
   	<h1>Client</h1>
-
-  	<!-- <form> -->
-  		Latitude: <input id="lat" type="text" placeholder="latitude">
-  		<br>
-  		Longitude: <input id="lon" type="text" placeholder="longitude">
-  		<br>
-  	<!-- </form> -->
+    <input id="searchTextField" type="text">
+    <br>
+    <button id="get-coords">Get Coordinates</button>
+    <br>
+		Latitude: <input id="lat" type="text" placeholder="latitude">
+		<br>
+		Longitude: <input id="lon" type="text" placeholder="longitude">
+		<br>
 		<button id="submit-query">Search</button>
   </body>
 </html>

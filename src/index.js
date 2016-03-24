@@ -4,9 +4,29 @@ var h = require('hyperscript')
 
 $(document).ready(function() {
 
-	navigator.geolocation.getCurrentPosition(function(pos){
-		$('#lat').val(pos.coords.latitude)
-		$('#lon').val(pos.coords.longitude)
+	if(navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(function(pos){
+			$('#lat').val(pos.coords.latitude)
+			$('#lon').val(pos.coords.longitude)
+		})
+	}
+
+	//autocomplete address lookup
+	var input = document.getElementById('searchTextField');
+	var options = {
+		types: ['geocode']
+	}
+	autocomplete = new google.maps.places.Autocomplete(input, options);
+	$('button#get-coords').click(function(){
+		request
+			.get('http://maps.googleapis.com/maps/api/geocode/json')
+			.query({
+				address: $('#searchTextField').val(),
+				key: process.env.GMAPS
+			})
+			.end(function(err,res){
+				console.log(res.body.results[0].geometry.location)
+			})
 	})
 
 	var query = {
