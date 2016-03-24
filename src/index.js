@@ -68,6 +68,7 @@ $(document).ready(function() {
 			)
 		)
 	}
+	
 
 	function appendResults(resObj){
 		for (var i = 0; i < resObj.restaurants.length; i++){
