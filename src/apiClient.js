@@ -1,7 +1,9 @@
 var request = require('superagent')
-var view = require('view')
+var $ = require('jquery')
 
-const getGoogleMapData = function() {
+var view = require('./view')
+
+var getGoogleMapData = function() {
   request
     .get('http://maps.googleapis.com/maps/api/geocode/json')
     .query({
@@ -15,7 +17,7 @@ const getGoogleMapData = function() {
     })
 }
 
-const getRestaurantData = function() {
+var getRestaurantData = function() {
   var query = {
     count: 3,
     radius: 500,

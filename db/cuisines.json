@@ -1,0 +1,132 @@
+{
+	"cuisines": [	
+		{
+	   	"id": 152,
+     	"type": "African"
+    },
+    {
+      "id": 1,
+      "type": "American"
+    },
+    {
+      "id": 151,
+      "type": "Argentine"
+    },
+    {
+      "id": 133,
+      "type": "British"
+    },
+    {
+      "id": 25,
+      "type": "Chinese"
+    },
+    {
+      "id": 38,
+      "type": "European"
+    },
+    {
+      "id": 112,
+      "type": "Filipino"
+    },
+    {
+      "id": 45,
+      "type": "French"
+    },
+    {
+      "id": 134,
+      "type": "German"
+    },
+    {
+      "id": 156,
+      "type": "Greek"
+    },
+    {
+      "id": 148,
+      "type": "Indian"
+    },
+    {
+      "id": 114,
+      "type": "Indonesian"
+    },
+    {
+      "id": 135,
+      "type": "Irish"
+    },
+    {
+      "id": 55,
+      "type": "Italian"
+    },
+    {
+      "id": 60,
+      "type": "Japanese"
+    },
+    {
+      "id": 167,
+      "type": "Kiwi"
+    },
+    {
+      "id": 67,
+      "type": "Korean"
+    },
+    {
+      "id": 136,
+      "type": "Latin American"
+    },
+    {
+      "id": 69,
+      "type": "Malaysian"
+    },
+    {
+      "id": 70,
+      "type": "Mediterranean"
+    },
+    {
+      "id": 73,
+      "type": "Mexican"
+    },
+    {
+      "id": 137,
+      "type": "Middle Eastern"
+    },
+    {
+      "id": 74,
+      "type": "Mongolian"
+    },
+    {
+      "id": 147,
+      "type": "Moroccan"
+    },
+    {
+      "id": 321,
+      "type": "Pacific"
+    },
+    {
+      "id": 87,
+      "type": "Portuguese"
+    },
+    {
+      "id": 119,
+      "type": "Singaporean"
+    },
+    {
+      "id": 89,
+      "type": "Spanish"
+    },
+    {
+      "id": 190,
+      "type": "Taiwanese"
+    },
+    {
+      "id": 95,
+      "type": "Thai"
+    },
+    {
+      "id": 142,
+      "type": "Turkish"
+    },
+    {
+      "id": 99,
+      "type": "Vietnamese"
+    }
+  ]
+}

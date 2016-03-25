@@ -1,10 +1,12 @@
 var $ = require('jquery')
 var h = require('hyperscript')
-var client = require('./apiClient')
 var request = require('superagent')
+
+var client = require('./apiClient')
 
 $(document).ready(function() {
 
+	//prompt user for geolocation data
 	if(navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(function(pos){
 			request
