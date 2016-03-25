@@ -9,20 +9,12 @@
       "type": "American"
     },
     {
-      "id": 151,
-      "type": "Argentine"
-    },
-    {
       "id": 133,
       "type": "British"
     },
     {
       "id": 25,
       "type": "Chinese"
-    },
-    {
-      "id": 38,
-      "type": "European"
     },
     {
       "id": 112,
@@ -45,14 +37,6 @@
       "type": "Indian"
     },
     {
-      "id": 114,
-      "type": "Indonesian"
-    },
-    {
-      "id": 135,
-      "type": "Irish"
-    },
-    {
       "id": 55,
       "type": "Italian"
     },
@@ -65,10 +49,6 @@
       "type": "Kiwi"
     },
     {
-      "id": 67,
-      "type": "Korean"
-    },
-    {
       "id": 136,
       "type": "Latin American"
     },
@@ -77,20 +57,8 @@
       "type": "Malaysian"
     },
     {
-      "id": 70,
-      "type": "Mediterranean"
-    },
-    {
       "id": 73,
       "type": "Mexican"
-    },
-    {
-      "id": 137,
-      "type": "Middle Eastern"
-    },
-    {
-      "id": 74,
-      "type": "Mongolian"
     },
     {
       "id": 147,
@@ -101,20 +69,8 @@
       "type": "Pacific"
     },
     {
-      "id": 87,
-      "type": "Portuguese"
-    },
-    {
-      "id": 119,
-      "type": "Singaporean"
-    },
-    {
       "id": 89,
       "type": "Spanish"
-    },
-    {
-      "id": 190,
-      "type": "Taiwanese"
     },
     {
       "id": 95,
