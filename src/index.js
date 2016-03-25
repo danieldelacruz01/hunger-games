@@ -1,6 +1,7 @@
 var $ = require('jquery')
 var h = require('hyperscript')
 var client = require('./apiClient')
+var request = require('superagent')
 
 $(document).ready(function() {
 

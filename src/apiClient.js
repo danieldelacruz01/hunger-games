@@ -1,4 +1,7 @@
 var request = require('superagent')
+var $ = require('jquery')
+var h = require('hyperscript')
+
 
 
   const getGoogleMapData = function() {
