@@ -12,15 +12,41 @@
 
   </head>
   <body>
-    <div class="container-fluid">
-    	<h1>Client</h1>
-      <h2>Your location</h2>
-      <input id="searchTextField" type="text">
-      <button id="get-coords">Go</button>
-      <br>
-  		<input id="lat" type="hidden" placeholder="latitude">
-  		<input id="lon" type="hidden" placeholder="longitude">
-      <br>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+          	<h1>The Hunger Games</h1>
+            <h2>Your location</h2>
+            <input id="searchTextField" type="text" class="form-control input-lg">
+            <button id="get-coords">Go</button>
+            <br>
+        		<input id="lat" type="hidden" placeholder="latitude">
+        		<input id="lon" type="hidden" placeholder="longitude">
+            <br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-2 col-sm-2 col-sm-offset-2 col-md-offset-3">
+            <input type="radio" name="transport" id="walk">
+            <label for="walk">
+              <img src="https://s3-media3.fl.yelpcdn.com/bphoto/3kYzacXR6M5tDPLHu7oZjQ/ls.jpg" />Walking
+            </label>
+          </div>
+          <div class="col-xs-2 col-xs-offset-1 col-sm-2 col-sm-offset-1 col-md-offset-0">
+            <input type="radio" name="transport" id="bike">
+            <label for="bike">
+              <img src="https://s3-media3.fl.yelpcdn.com/bphoto/J3tTnBzMUGKZp2z8ep-LMw/ls.jpg" />Biking
+            </label>      
+          </div>
+          <div class="col-xs-2 col-xs-offset-1 col-sm-2 col-sm-offset-1 col-md-offset-0">
+            <input type="radio" name="transport" id="car">
+            <label for="car">
+              <img src="http://www.historic-uk.com/assets/Images/sundayroast.jpg?1390900090" />Driving
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="select-cuisines" class="container">
@@ -95,7 +121,7 @@
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="136">
           <label for="136">
-            <img src="https://s3-media2.fl.yelpcdn.com/bphoto/ALQKOfRM4I6D8JT1RmAkQw/ls.jpg" />Latin American
+            <img src="https://s3-media2.fl.yelpcdn.com/bphoto/ALQKOfRM4I6D8JT1RmAkQw/ls.jpg" />Latin
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
