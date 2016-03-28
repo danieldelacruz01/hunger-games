@@ -18,8 +18,10 @@
           <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
           	<h1>The Hunger Games</h1>
             <h2>Your location</h2>
-            <input id="searchTextField" type="text" class="form-control input-lg">
-            <button id="get-coords">Go</button>
+            <div class="form-group">
+              <input id="searchTextField" type="text" class="form-control input-lg">
+              <button id="get-coords">Go</button>
+            </div>
             <br>
         		<input id="lat" type="hidden" placeholder="latitude">
         		<input id="lon" type="hidden" placeholder="longitude">
@@ -30,19 +32,19 @@
           <div class="col-xs-2 col-xs-offset-2 col-sm-2 col-sm-offset-2 col-md-offset-3">
             <input type="radio" name="transport" id="walk">
             <label for="walk">
-              <img src="https://s3-media3.fl.yelpcdn.com/bphoto/3kYzacXR6M5tDPLHu7oZjQ/ls.jpg" />Walking
+              <img src="https://cdn3.iconfinder.com/data/icons/basic-mobile-part-2/512/ignore-512.png" />Walking
             </label>
           </div>
           <div class="col-xs-2 col-xs-offset-1 col-sm-2 col-sm-offset-1 col-md-offset-0">
             <input type="radio" name="transport" id="bike">
             <label for="bike">
-              <img src="https://s3-media3.fl.yelpcdn.com/bphoto/J3tTnBzMUGKZp2z8ep-LMw/ls.jpg" />Biking
+              <img src="https://cdn1.iconfinder.com/data/icons/travel-line-icons-vol-3/48/096-512.png" />Biking
             </label>      
           </div>
           <div class="col-xs-2 col-xs-offset-1 col-sm-2 col-sm-offset-1 col-md-offset-0">
             <input type="radio" name="transport" id="car">
             <label for="car">
-              <img src="http://www.historic-uk.com/assets/Images/sundayroast.jpg?1390900090" />Driving
+              <img src="https://cdn3.iconfinder.com/data/icons/pixel-perfect-at-24px-volume-5/24/2054-512.png" />Driving
             </label>
           </div>
         </div>
@@ -51,146 +53,136 @@
 
     <div id="select-cuisines" class="container">
       <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+          <h2>Pick your cuisine(s)</h2>
+          <br>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="152">
           <label for="152">
-            <img src="https://s3-media3.fl.yelpcdn.com/bphoto/3kYzacXR6M5tDPLHu7oZjQ/ls.jpg" />African
+            <img class=img-thumbnail src="https://s3-media3.fl.yelpcdn.com/bphoto/3kYzacXR6M5tDPLHu7oZjQ/ls.jpg" />African
           </label>
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="1">
           <label for="1">
-            <img src="https://s3-media3.fl.yelpcdn.com/bphoto/J3tTnBzMUGKZp2z8ep-LMw/ls.jpg" />American
+            <img class=img-thumbnail src="https://s3-media3.fl.yelpcdn.com/bphoto/J3tTnBzMUGKZp2z8ep-LMw/ls.jpg" />American
           </label>      
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="133">
           <label for="133">
-            <img src="http://www.historic-uk.com/assets/Images/sundayroast.jpg?1390900090" />British
+            <img class=img-thumbnail src="http://www.historic-uk.com/assets/Images/sundayroast.jpg?1390900090" />British
           </label>
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="25">
           <label for="25">
-            <img src="https://s3-media3.fl.yelpcdn.com/bphoto/Jt0MX1myarWJqSESKd5oCg/ls.jpg" />Chinese
+            <img class=img-thumbnail src="https://s3-media3.fl.yelpcdn.com/bphoto/Jt0MX1myarWJqSESKd5oCg/ls.jpg" />Chinese
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="112">
           <label for="112">
-            <img src="https://s3-media4.fl.yelpcdn.com/bphoto/Tm0ZSYkT1ugrJoManI9Fwg/ls.jpg" />Filipino
+            <img class=img-thumbnail src="https://s3-media4.fl.yelpcdn.com/bphoto/Tm0ZSYkT1ugrJoManI9Fwg/ls.jpg" />Filipino
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="45">
           <label for="45">
-            <img src="https://s3-media4.fl.yelpcdn.com/bphoto/IaGUmNHW2V9r6F5bmTbj4Q/ls.jpg" />French
+            <img class=img-thumbnail src="https://s3-media4.fl.yelpcdn.com/bphoto/IaGUmNHW2V9r6F5bmTbj4Q/ls.jpg" />French
           </label>    
         </div>
         <!-- get images from here -->
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="134">
           <label for="134">
-            <img src="https://s3-media1.fl.yelpcdn.com/bphoto/kcf_2H6pUxK0qXu7oVIKOQ/ls.jpg" />German
+            <img class=img-thumbnail src="https://s3-media1.fl.yelpcdn.com/bphoto/kcf_2H6pUxK0qXu7oVIKOQ/ls.jpg" />German
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="156">
           <label for="156">
-            <img src="http://images.media-allrecipes.com/userphotos/250x250/259470.jpg" />Greek
+            <img class=img-thumbnail src="http://images.media-allrecipes.com/userphotos/250x250/259470.jpg" />Greek
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="148">
           <label for="148">
-            <img src="https://s3-media3.fl.yelpcdn.com/bphoto/uRgA4gBHQTBVyMpuAbTCfg/ls.jpg" />Indian
+            <img class=img-thumbnail src="https://s3-media3.fl.yelpcdn.com/bphoto/uRgA4gBHQTBVyMpuAbTCfg/ls.jpg" />Indian
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="55">
           <label for="55">
-            <img src="http://www.notempire.com/images/uploads/mentaiko-pasta-2.jpg" />Italian
+            <img class=img-thumbnail src="http://www.notempire.com/images/uploads/mentaiko-pasta-2.jpg" />Italian
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="60">
           <label for="60">
-            <img src="http://images.tastespotting.com/thumbnails/390025.jpg" />Japanese
+            <img class=img-thumbnail src="http://images.tastespotting.com/thumbnails/390025.jpg" />Japanese
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="136">
           <label for="136">
-            <img src="https://s3-media2.fl.yelpcdn.com/bphoto/ALQKOfRM4I6D8JT1RmAkQw/ls.jpg" />Latin
+            <img class=img-thumbnail src="https://s3-media2.fl.yelpcdn.com/bphoto/ALQKOfRM4I6D8JT1RmAkQw/ls.jpg" />Latin
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="69">
           <label for="69">
-            <img src="https://s-media-cache-ak0.pinimg.com/564x/92/90/0a/92900ab09e50b057aa5ea3f060c969ca.jpg" />Malaysian
+            <img class=img-thumbnail src="https://s-media-cache-ak0.pinimg.com/564x/92/90/0a/92900ab09e50b057aa5ea3f060c969ca.jpg" />Malaysian
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="73">
           <label for="73">
-            <img src="https://s3-media1.fl.yelpcdn.com/bphoto/OlphjvjVP0F6oFL17ecxJg/ls.jpg" />Mexican
+            <img class=img-thumbnail src="https://s3-media1.fl.yelpcdn.com/bphoto/OlphjvjVP0F6oFL17ecxJg/ls.jpg" />Mexican
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="147">
           <label for="147">
-            <img src="https://s-media-cache-ak0.pinimg.com/736x/a5/98/fb/a598fb0b21571be855be0e03161b9709.jpg" />Moroccan
+            <img class=img-thumbnail src="https://s-media-cache-ak0.pinimg.com/736x/a5/98/fb/a598fb0b21571be855be0e03161b9709.jpg" />Moroccan
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="321">
           <label for="321">
-            <img src="https://s3-media2.fl.yelpcdn.com/bphoto/lJ1skHC8zPjVnza_0EzYwQ/ls.jpg" />Pacific
+            <img class=img-thumbnail src="https://s3-media2.fl.yelpcdn.com/bphoto/lJ1skHC8zPjVnza_0EzYwQ/ls.jpg" />Pacific
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="89">
           <label for="89">
-            <img src="http://www.thespanishcuisine.com/sites/default/files/pictures/styles/recipe/public/Spanish-paella-recipe-Spanish-Tapas.jpg?itok=0OxwtNXm" />Spanish
+            <img class=img-thumbnail src="http://www.thespanishcuisine.com/sites/default/files/pictures/styles/recipe/public/Spanish-paella-recipe-Spanish-Tapas.jpg?itok=0OxwtNXm" />Spanish
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="95">
           <label for="95">
-            <img src="https://s3-media4.fl.yelpcdn.com/bphoto/ilT3CqMqbEqoE9UxK4UsJw/ls.jpg" />Thai
+            <img class=img-thumbnail src="https://s3-media4.fl.yelpcdn.com/bphoto/ilT3CqMqbEqoE9UxK4UsJw/ls.jpg" />Thai
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="142">
           <label for="142">
-            <img src="https://s3-media2.fl.yelpcdn.com/bphoto/jE4RfWam8svWMDQg63SC5A/ls.jpg" />Turkish
+            <img class=img-thumbnail src="https://s3-media2.fl.yelpcdn.com/bphoto/jE4RfWam8svWMDQg63SC5A/ls.jpg" />Turkish
           </label>    
         </div>
         <div class="col-xs-3 col-sm-2">
           <input type="checkbox" name="cuisine" id="99">
           <label for="99">
-            <img src="https://s3-media3.fl.yelpcdn.com/bphoto/qDNVisP7KmxHfzGjiQCNzQ/ls.jpg" />Vietnamese
+            <img class=img-thumbnail src="https://s3-media3.fl.yelpcdn.com/bphoto/qDNVisP7KmxHfzGjiQCNzQ/ls.jpg" />Vietnamese
           </label>    
         </div>
        </div>
    
     </div>
-
-     <!--  <input type="checkbox" name="cuisine" val="152">African
-      <input type="checkbox" name="cuisine" val="1">American
-      <input type="checkbox" name="cuisine" val="133">British
-      <input type="checkbox" name="cuisine" val="25">Chinese
-      <input type="checkbox" name="cuisine" val="112">Filipino
-      <input type="checkbox" name="cuisine" val="45">French
-      <br>
-      <input type="checkbox" name="cuisine" val="134">German
-      <input type="checkbox" name="cuisine" val="156">Greek
-      <input type="checkbox" name="cuisine" val="148">Indian
-      <input type="checkbox" name="cuisine" val="114">Indonesian
-      <input type="checkbox" name="cuisine" val="55">Italian
-      <input type="checkbox" name="cuisine" val="60">Japanese
-      <input type="checkbox" name="cuisine" val="167">Kiwi
-      <br> -->
     </div>
       
   	<button id="submit-query">Search</button>

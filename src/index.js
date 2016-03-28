@@ -30,6 +30,18 @@ $(document).ready(function() {
 	}
 	autocomplete = new google.maps.places.Autocomplete(input, options);
 	
+		$('#get-coords').click(function(event){
+		console.log($('#searchTextField').val())
+		$('#searchTextField').addClass('has-success has-feedback')
+	})
 	$('#get-coords').click(client.getGoogleMapData)
-	$('#submit-query').click(client.getRestaurantData)
+	//$('#submit-query').click(client.getRestaurantData)
+
+	  $('#submit-query').click(function() {
+        var cuisineIds = [];
+        $('input[type=checkbox]:checked').each(function() {
+            cuisineIds.push(this.id)
+        });
+        console.log(cuisineIds)
+    });
 });
