@@ -31,7 +31,7 @@ router.get('/', function(req, res, next) {
 				"location": resultaurant.location,
 				"cuisines": resultaurant.cuisines,
 				"rating": resultaurant.user_rating.aggregate_rating,
-				"photos": resultaurant.photos_url,
+				"photo": resultaurant.featured_image,
 				"menu": resultaurant.menu_url
 			}
 			resultaurants.restaurants.push(resultsObj)

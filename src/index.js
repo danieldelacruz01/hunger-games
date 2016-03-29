@@ -35,7 +35,10 @@ $(document).ready(function() {
 		console.log($('#searchTextField').val())
 		$('#searchTextField').addClass('has-success has-feedback')
 	})
-	$('#get-coords').click(client.getGoogleMapData)
+	$('#get-coords').click(function(){
+		client.getGoogleMapData
+		scrollToAnchor('select-cuisines')
+	})
 	//$('#submit-query').click(client.getRestaurantData)
 
   $('#submit-query').click(function() {
@@ -54,4 +57,8 @@ $(document).ready(function() {
   $('#test').click(function(){
 	  view.loadCuisines()
 	})
+	function scrollToAnchor(id){
+    var anchor = $("div#"+id);
+    $('html,body').animate({scrollTop: id.offset().top},'slow');
+	}
 });

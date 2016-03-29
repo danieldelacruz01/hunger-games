@@ -4,8 +4,10 @@ var h = require('hyperscript')
 function createDiv(){
   $('div#results').remove()
   $('body').append(
-    h('div#results',
-      h('h2', 'You should try:')
+    h('div#results.container',
+      h('div#results-row.row', 
+        h('h2', 'You should try:')
+      )
     )
   )
 }
@@ -13,18 +15,32 @@ function createDiv(){
 function appendResults(resObj){
   for (var i = 0; i < resObj.restaurants.length; i++){
     $('div#results').append(
-      // h('div#resultaurants',		
-        h('h3', resObj.restaurants[i].name),
-        h('p', resObj.restaurants[i].location.address),
-        h('ul',
-          h('li', 'Cuisine: '+resObj.restaurants[i].cuisines),
-          h('li', 'Rating: '+resObj.restaurants[i].rating),
-          h('li',
-            h('a','View Menu',{'href':resObj.restaurants[i].menu})
+      h('div#result.row',
+        h('div.col-xs-4',
+          h('img.restaurant-img.img-thumbnail', {src: resObj.restaurants[i].photo})
+        ),
+        h('div.col-xs-8',
+          h('h3.restaurant', resObj.restaurants[i].name),
+          h('p', resObj.restaurants[i].location.address),
+          h('ul',
+            h('li', 'Cuisine: '+resObj.restaurants[i].cuisines),
+            h('li', 'Rating: '+resObj.restaurants[i].rating),
+            h('li',
+              h('a','View Menu',{'href':resObj.restaurants[i].menu})
+            )
           )
         )
-      )
-    //)
+      ),
+      h('div#results-button.row',
+        h('div.col-xs-2.col-xs-offset-4',
+          h('button#yeah.btn.btn-primary.btn-lg', 'Yeah!', {type: 'button'})
+        ),
+        h('div.col-xs-2',
+          h('button#nah.btn.btn-default.btn-lg', 'Nah', {type: 'button'})
+        )
+      ),
+      h('br')
+    )
   }
 }
 

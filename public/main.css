@@ -6,6 +6,27 @@
   color: white !important;
 }
 
+#test {
+  text-align: center;
+}
+
+.restaurant {
+  padding: 0px;
+  margin: 0px;
+}
+
+.restaurant-img {
+  max-width: 100%;
+}
+
+#results-button {
+  text-align: center;
+}
+
+#yeah, #nah {
+  width: 100%;
+}
+
 label img {
   max-width: 100%
 }
