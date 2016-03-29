@@ -7,6 +7,8 @@ var view = require('./view')
 
 $(document).ready(function() {
 
+	$('#select-cuisines').hide()
+
 	//prompt user for geolocation data
 	if(navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(function(pos){
@@ -32,7 +34,7 @@ $(document).ready(function() {
 	autocomplete = new google.maps.places.Autocomplete(input, options);
 
 	//load next step - cuisines div
-	$('#next').click(function(event){
+	$('#next-cuisines').click(function(event){
 		event.preventDefault();
 
   	if(!$('#lat').val()){
@@ -46,6 +48,7 @@ $(document).ready(function() {
 				client.getCoords($('#searchTextField').val())
 			}
 		} else {		
+			$('#select-cuisines').show()
 		  view.loadCuisines()
 		  //scroll to cuisines
 	    var id     = $(this).attr("href");
