@@ -20,16 +20,8 @@ function searchZomato(obj, callback){
 /* GET restaurants listing. */
 router.get('/', function(req, res, next) {
 
-	// var queryObj = {
-	// 	// count: 10,
-	// 	// lat: -41.2969092,
-	// 	// lon: 174.7720306,
-	// 	// radius: 500,
-	// 	// sort: 'real_distance',
-	// 	// order: 'asc'
-	// }
-
 	searchZomato(req.query, function(result) {
+		console.log(req.query)
 		var resultaurants = {'restaurants':[]}
 
 		for (var i = 0; i < result.restaurants.length; i++){

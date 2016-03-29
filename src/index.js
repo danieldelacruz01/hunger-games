@@ -38,13 +38,18 @@ $(document).ready(function() {
 	$('#get-coords').click(client.getGoogleMapData)
 	//$('#submit-query').click(client.getRestaurantData)
 
-	  $('#submit-query').click(function() {
-        var cuisineIds = [];
-        $('input[type=checkbox]:checked').each(function() {
-            cuisineIds.push(this.id)
-        });
-        console.log(cuisineIds)
-    });
+  $('#submit-query').click(function() {
+      var cuisineIds = [];
+      $('input[name=cuisine]:checked').each(function() {
+          cuisineIds.push(this.id)
+      });
+  		var distance = parseInt($('input[name=transport]:checked').attr("value"))
+      var filters = {
+      	cuisines: cuisineIds.join(","),
+      	radius: distance
+      }
+      client.getRestaurantData(filters)
+  });
 
   $('#test').click(function(){
 	  view.loadCuisines()

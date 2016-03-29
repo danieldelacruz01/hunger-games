@@ -2,6 +2,7 @@ var $ = require('jquery')
 var h = require('hyperscript')
 
 function createDiv(){
+  $('div#results').remove()
   $('body').append(
     h('div#results',
       h('h2', 'You should try:')
@@ -11,17 +12,19 @@ function createDiv(){
 
 function appendResults(resObj){
   for (var i = 0; i < resObj.restaurants.length; i++){
-    $('div#results').append(		
-      h('h3', resObj.restaurants[i].name),
-      h('p', resObj.restaurants[i].location.address),
-      h('ul',
-        h('li', 'Cuisine: '+resObj.restaurants[i].cuisines),
-        h('li', 'Rating: '+resObj.restaurants[i].rating),
-        h('li',
-          h('a','View Menu',{'href':resObj.restaurants[i].menu})
+    $('div#results').append(
+      // h('div#resultaurants',		
+        h('h3', resObj.restaurants[i].name),
+        h('p', resObj.restaurants[i].location.address),
+        h('ul',
+          h('li', 'Cuisine: '+resObj.restaurants[i].cuisines),
+          h('li', 'Rating: '+resObj.restaurants[i].rating),
+          h('li',
+            h('a','View Menu',{'href':resObj.restaurants[i].menu})
+          )
         )
       )
-    )
+    //)
   }
 }
 
@@ -30,7 +33,7 @@ function loadCuisines(){
   for (var i = 0; i < cuisines.length; i++){
     $('#cuisines').append(
       h('div.col-xs-3.col-sm-2.selectImg', 
-        h('input', {type: "checkbox", name: "cuisine", id: cuisines[i].id}),
+        h('input', {type: "radio", name: "cuisine", id: cuisines[i].id}),
         h('label', {htmlFor: cuisines[i].id},
           h('img.img-thumbnail', {src: "/images/" + cuisines[i].id + ".jpg"}),
           cuisines[i].type

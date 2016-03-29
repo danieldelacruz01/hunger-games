@@ -17,14 +17,16 @@ var getGoogleMapData = function() {
     })
 }
 
-var getRestaurantData = function() {
+var getRestaurantData = function(filters) {
+	console.log(filters.cuisines)
   var query = {
     count: 3,
-    radius: 500,
+    radius: filters.radius,
     sort: 'rating',
     order: 'desc',
     lat:  $('input#lat').val(),
-    lon:  $('input#lon').val()
+    lon:  $('input#lon').val(),
+    cuisines: filters.cuisines
   }
 
   request
