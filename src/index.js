@@ -3,6 +3,7 @@ var h = require('hyperscript')
 var request = require('superagent')
 
 var client = require('./apiClient')
+var view = require('./view')
 
 $(document).ready(function() {
 
@@ -44,4 +45,8 @@ $(document).ready(function() {
         });
         console.log(cuisineIds)
     });
+
+  $('#test').click(function(){
+	  view.loadCuisines()
+	})
 });
