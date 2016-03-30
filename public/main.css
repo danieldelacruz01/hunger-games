@@ -3,31 +3,31 @@ body {
 }
 
 hr {
-  border-color: #252839 !important;
+  border-color: #2f3351 !important;
 }
 
 .jumbotron {
-  background-color: #252839 !important;
+  background-color: #2f3351 !important;
   height: 95vh;
   color: white !important;
 }
 
 .container {
-  padding-top: 50px;
-  padding-bottom: 75px;
+  padding-top: 25px;
+  padding-bottom: 50px;
 }
 
 .container-fluid {
-  background-color: #252839 !important;
-  padding-top: 75px;
+  background-color: #2f3351 !important;
+  padding-top: 50px;
   padding-bottom: 75px;
   color: white;
 }
 
 #next, #submit-query {
   border: none;
-  background-color: #e62739;
-  color: #b5b5b7;
+  background-color: #448AFF;
+  color: white;
   width: 100%;
   border-radius: 25px !important;
 }
@@ -56,26 +56,31 @@ input[type=range]::-webkit-slider-thumb {
     height: 25px;
     width: 25px;
     border-radius: 50%;
-    background-color: #e62739;
+    background-color: #448AFF;
     margin-top: -7px;
 }
 
 #results {
-  background-color: #252839;
+  background-color: #2f3351;
   color: white;
-
+  font-size: 1.5em;
 }
 
 #yeah {
+  width: 100%;
   border: none;
-  background-color: #e62739;
+  background-color: #448AFF;
   border-radius: 25px !important;
 }
 
 #nah {
+  width: 100%;
   border-radius: 25px !important;
 }
 
+#map {
+  height: 400px;
+}
 .restaurant {
   padding: 0px;
   margin: 0px;
@@ -106,7 +111,7 @@ input[type="checkbox"]:checked + label img, input[type="radio"]:checked + label 
   box-sizing: border-box;
   border-style: solid;
   border-width: 3px;
-  border-color: #e62739;
+  border-color: #448AFF;
   transition-duration:0.2s;
   transform: scale(0.95);
 }
