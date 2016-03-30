@@ -12,39 +12,55 @@ function searchZomato(obj, callback){
 		.set('user-key', process.env.ZOMATO)
 		.query(obj)
 		.end(function(err,res){
-			// console.log(res.body)
 			callback(res.body)
 		})	
+}
+
+function formatResults(result, queryPrice){
+	var resultaurants = {'restaurants':[]}
+
+	for (var i = 0; i < result.restaurants.length; i++){
+		var resultaurant = result.restaurants[i].restaurant
+		var resultObj = {
+			"name": resultaurant.name,
+			"location": resultaurant.location,
+			"cuisines": resultaurant.cuisines,
+			"rating": resultaurant.user_rating.aggregate_rating,
+			"photo": resultaurant.featured_image,
+			"menu": resultaurant.menu_url,
+			"price": resultaurant.price_range
+		}
+		resultaurants.restaurants.push(resultObj)
+	}
+
+	if (queryPrice > 0){	
+		var filteredResultaurants = resultaurants.restaurants.filter(function(restaurant){
+			return restaurant.price == queryPrice
+		})
+		var filteredResultaurantsObj = {
+			"restaurants": filteredResultaurants
+		}
+		return filteredResultaurantsObj
+	}
+
+	return resultaurants
 }
 
 /* GET restaurants listing. */
 router.get('/', function(req, res, next) {
 
-	// var queryObj = {
-	// 	// count: 10,
-	// 	// lat: -41.2969092,
-	// 	// lon: 174.7720306,
-	// 	// radius: 500,
-	// 	// sort: 'real_distance',
-	// 	// order: 'asc'
-	// }
-
-	searchZomato(req.query, function(result) {
-		var resultaurants = {'restaurants':[]}
-
-		for (var i = 0; i < result.restaurants.length; i++){
-			var resultaurant = result.restaurants[i].restaurant
-			var resultsObj = {
-				"name": resultaurant.name,
-				"location": resultaurant.location,
-				"cuisines": resultaurant.cuisines,
-				"rating": resultaurant.user_rating.aggregate_rating,
-				"photos": resultaurant.photos_url,
-				"menu": resultaurant.menu_url
-			}
-			resultaurants.restaurants.push(resultsObj)
-		}
-
+	var query = {
+		// count: 10,
+		radius: req.query.radius,
+		sort: 'rating',
+		order: 'desc',
+		lat: req.query.lat,
+		lon: req.query.lon,
+		cuisines: req.query.cuisines || null
+	}
+	searchZomato(query, function(apiResult) {
+		var resultaurants = formatResults(apiResult, req.query.price)
+		
 		res.send(resultaurants)
 	})
 });

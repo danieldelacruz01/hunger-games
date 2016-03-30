@@ -3,11 +3,11 @@ var $ = require('jquery')
 
 var view = require('./view')
 
-var getGoogleMapData = function() {
+var getCoords = function(address) {
   request
     .get('http://maps.googleapis.com/maps/api/geocode/json')
     .query({
-      address: $('#searchTextField').val(),
+      address: address,
       key: process.env.GMAPS
     })
     .end(function(err,res){
@@ -17,14 +17,13 @@ var getGoogleMapData = function() {
     })
 }
 
-var getRestaurantData = function() {
+var getRestaurantData = function(filters) {
   var query = {
-    count: 3,
-    radius: 500,
-    sort: 'rating',
-    order: 'desc',
+    radius: filters.radius || 500,
     lat:  $('input#lat').val(),
-    lon:  $('input#lon').val()
+    lon:  $('input#lon').val(),
+    cuisines: filters.cuisines || null,
+    price: filters.price
   }
 
   request
@@ -38,5 +37,5 @@ var getRestaurantData = function() {
 
 module.exports = {
   getRestaurantData: getRestaurantData, 
-  getGoogleMapData: getGoogleMapData
+  getCoords: getCoords
 }

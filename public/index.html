@@ -4,35 +4,103 @@
     <title>Client</title>
 		<script src="bundle.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvUJeR4JdqLtODVp9R5suxIeHXKbi1aWo&libraries=places"></script>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
   </head>
   <body>
-  	<h1>Client</h1>
-    <h2>Your location</h2>
-    <input id="searchTextField" type="text">
-    <button id="get-coords">Go</button>
-    <br>
-		<input id="lat" type="hidden" placeholder="latitude">
-		<input id="lon" type="hidden" placeholder="longitude">
-    <br>
-    <div id="select-cuisines">
-      <input type="checkbox" name="cuisine" val="152">African
-      <input type="checkbox" name="cuisine" val="1">American
-      <input type="checkbox" name="cuisine" val="151">Argentine
-      <input type="checkbox" name="cuisine" val="133">British
-      <input type="checkbox" name="cuisine" val="25">Chinese
-      <input type="checkbox" name="cuisine" val="38">European
-      <input type="checkbox" name="cuisine" val="112">Filipino
-      <input type="checkbox" name="cuisine" val="45">French
-      <br>
-      <input type="checkbox" name="cuisine" val="134">German
-      <input type="checkbox" name="cuisine" val="156">Greek
-      <input type="checkbox" name="cuisine" val="148">Indian
-      <input type="checkbox" name="cuisine" val="114">Indonesian
-      <input type="checkbox" name="cuisine" val="135">Irish
-      <input type="checkbox" name="cuisine" val="55">Italian
-      <input type="checkbox" name="cuisine" val="60">Japanese
-      <input type="checkbox" name="cuisine" val="167">Kiwi
-      <br>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+          	<h1>The Hunger Games</h1>
+            <h2>1. Your location</h2>
+            <div id="location-form" class="form-group">
+              <input id="searchTextField" type="text" class="form-control input-lg">
+            </div>
+            <br>
+        		<input id="lat" type="hidden" placeholder="latitude">
+        		<input id="lon" type="hidden" placeholder="longitude">
+            <br>
+          </div>
+        </div>
+        <div class="row">
+          <br>
+          <div class="col-xs-4 col-xs-offset-4">
+            <a href="#select-filters" id="next" type="button" class="btn btn-default btn-lg next-step"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="filter">
+
+      <div id="select-filters" class="container">
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <h2>2. How will you get there?</h2>
+            <hr>
+            <br>
+          </div>
+        </div>
+        <div id="select-transport" class="row">
+          <div class="col-xs-2 col-xs-offset-2 col-sm-2 col-sm-offset-2 col-md-offset-3">
+            <input type="radio" name="transport" id="walk" value="500">
+            <label for="walk">
+              <img src="https://cdn3.iconfinder.com/data/icons/basic-mobile-part-2/512/ignore-512.png" />Walking
+            </label>
+          </div>
+          <div class="col-xs-2 col-xs-offset-1 col-sm-2 col-sm-offset-1 col-md-offset-0">
+            <input type="radio" name="transport" id="bike" value="2000">
+            <label for="bike">
+              <img src="https://cdn1.iconfinder.com/data/icons/travel-line-icons-vol-3/48/096-512.png" />Biking
+            </label>      
+          </div>
+          <div class="col-xs-2 col-xs-offset-1 col-sm-2 col-sm-offset-1 col-md-offset-0">
+            <input type="radio" name="transport" id="car" value="15000">
+            <label for="car">
+              <img src="https://cdn3.iconfinder.com/data/icons/pixel-perfect-at-24px-volume-5/24/2054-512.png" />Driving
+            </label>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <h2>3. How much do you want to spend?</h2>
+            <hr>
+            <br>
+          </div>
+        </div>
+        <div id="select-budget" class="row">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <input id="price" type="range" min="0" max="4" value="0" />
+            <br>
+            <table>
+              <tr>
+                <td align="left">Any</td>
+                <td align="left">$</td>
+                <td align="left">$$</td>
+                <td align="left">$$$</td>
+                <td align="right">$$$$</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="select-cuisines" class="container">
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <h2>4. Select cuisine</h2>
+            <hr>
+            <br>
+          </div>
+        </div>
+        <div id="cuisines" class="row">      
+        </div>
+      </div>
     </div>
       
   	<button id="submit-query">Search</button>
