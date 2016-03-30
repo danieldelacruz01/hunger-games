@@ -20,13 +20,14 @@ var getCoords = function(address) {
 var getRestaurantData = function(filters) {
 	console.log(filters.cuisines)
   var query = {
-    count: 3,
+  	// count: 10,
     radius: filters.radius || 500,
-    sort: 'rating',
-    order: 'desc',
+    // sort: 'rating',
+    // order: 'desc',
     lat:  $('input#lat').val(),
     lon:  $('input#lon').val(),
-    cuisines: filters.cuisines
+    cuisines: filters.cuisines || null,
+    price: filters.price
   }
 
   request

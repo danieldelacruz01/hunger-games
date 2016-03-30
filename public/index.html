@@ -28,6 +28,24 @@
           </div>
         </div>
         <div class="row">
+          <br>
+          <div class="col-xs-4 col-xs-offset-4">
+            <a href="#select-filters" id="next" type="button" class="btn btn-default btn-lg next-step"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="filter">
+
+      <div id="select-filters" class="container">
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <h2>2. How will you get there?</h2>
+            <hr>
+            <br>
+          </div>
+        </div>
+        <div id="select-transport" class="row">
           <div class="col-xs-2 col-xs-offset-2 col-sm-2 col-sm-offset-2 col-md-offset-3">
             <input type="radio" name="transport" id="walk" value="500">
             <label for="walk">
@@ -47,23 +65,41 @@
             </label>
           </div>
         </div>
+        <br>
         <div class="row">
-          <br>
-          <div class="col-xs-4 col-xs-offset-4">
-            <a href="#select-cuisines" id="next-cuisines" type="button" class="btn btn-default btn-lg next-step"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <h2>3. How much do you want to spend?</h2>
+            <hr>
+            <br>
+          </div>
+        </div>
+        <div id="select-budget" class="row">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <input id="price" type="range" min="0" max="4" value="0" />
+            <br>
+            <table>
+              <tr>
+                <td align="left">Any</td>
+                <td align="left">$</td>
+                <td align="left">$$</td>
+                <td align="left">$$$</td>
+                <td align="right">$$$$</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
-    </div>
 
-    <div id="select-cuisines" class="container">
-      <div class="row">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-          <h2>2. Select a cuisine</h2>
-          <br>
+      <div id="select-cuisines" class="container">
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <h2>4. Select cuisine</h2>
+            <hr>
+            <br>
+          </div>
         </div>
-      </div>
-      <div id="cuisines" class="row">      
+        <div id="cuisines" class="row">      
+        </div>
       </div>
     </div>
       
