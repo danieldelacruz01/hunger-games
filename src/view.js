@@ -39,6 +39,14 @@ var cuisines = [
   {"id": "99","type": "Vietnamese"}
 ]
 
+function scrollToElement(elem){
+  var offset = $(elem).offset();
+  $("html, body").animate({
+    scrollTop: offset.top
+  }, 500);
+}
+
+
 function createDiv(){
   $('div#results').remove()
   $('body').append(
@@ -51,38 +59,37 @@ function createDiv(){
 }
 
 function appendResults(resObj){
-  for (var i = 0; i < resObj.restaurants.length; i++){
-    $('div#results').append(
-      h('div#result.row',
-        h('div.col-xs-4',
-          h('img.restaurant-img.img-thumbnail', {src: resObj.restaurants[i].photo})
-        ),
-        h('div.col-xs-8',
-          h('h3.restaurant', resObj.restaurants[i].name),
-          h('p', resObj.restaurants[i].location.address),
-          h('ul',
-            h('li', 'Cuisine: '+resObj.restaurants[i].cuisines),
-            h('li', 'Rating: '+resObj.restaurants[i].rating),
-            h('li',
-              h('a','View Menu',{'href':resObj.restaurants[i].menu})
-            )
+  $('div#results').append(
+    h('div#result.row',
+      h('div.col-xs-4.col-xs-offset-2',
+        h('img.restaurant-img.img-thumbnail', {src: resObj.photo})
+      ),
+      h('div.col-xs-4',
+        h('h3.restaurant', resObj.name),
+        h('p', resObj.location.address),
+        h('ul',
+          h('li', 'Cuisine: '+resObj.cuisines),
+          h('li', 'Rating: '+resObj.rating),
+          h('li',
+            h('a','View Menu',{'href':resObj.menu})
           )
         )
+      )
+    ),
+    h('div#results-button.row',
+      h('br'),
+      h('div.col-xs-4.col-xs-offset-2.col-sm-2.col-sm-offset-4',
+        h('button#yeah.btn.btn-primary.btn-lg.next-step', 'Yeah!', {type: 'button'})
       ),
-      h('div#results-button.row',
-        h('div.col-xs-4.col-xs-offset-2.col-sm-2.col-sm-offset-4',
-          h('button#yeah.btn.btn-primary.btn-lg.next-step', 'Yeah!', {type: 'button'})
-        ),
-        h('div.col-xs-4.col-sm-2',
-          h('button#nah.btn.btn-default.btn-lg.next-step', 'Nah', {type: 'button'})
-        )
-      ),
-      h('br')
+      h('div.col-xs-4.col-sm-2',
+        h('button#nah.btn.btn-default.btn-lg.next-step', 'Nah', {type: 'button'})
+      )
     )
-  }
+  )
 }
 
 module.exports = {
+  scrollToElement: scrollToElement,
   appendResults: appendResults,
   createDiv: createDiv,
   loadCuisines: loadCuisines

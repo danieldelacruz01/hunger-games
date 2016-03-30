@@ -6,7 +6,7 @@ var client = require('./apiClient')
 var view = require('./view')
 
 $(document).ready(function() {
-	$('#filter').hide()
+	$('#filter, #submit-query, #results').hide()
 
 	//prompt user for geolocation data
 	if(navigator.geolocation){
@@ -47,19 +47,20 @@ $(document).ready(function() {
 				client.getCoords($('#searchTextField').val())
 			}
 		} else {		
-			$('#filter').show()
+			$('#filter, #submit-query').show()
 		  view.loadCuisines()
 		  //scroll to cuisines
-	    var id     = $(this).attr("href");
-	    var offset = $(id).offset();
-	    $("html, body").animate({
-	      scrollTop: offset.top
-	    }, 500);
+	    view.scrollToElement("#select-filters")
 		}
 	})
 
-  $('#submit-query').click(function() {
-  	console.log($('#price').val())
+	var restaurants = []
+	var displayedResult = 0
+
+  $('#submit-query').click(function(event) {
+  	event.preventDefault()
+  	$('#result').remove()
+
     var cuisineIds = [];
     $('input[name=cuisine]:checked').each(function() {
         cuisineIds.push(this.id)
@@ -72,6 +73,27 @@ $(document).ready(function() {
     	radius: distance,
     	price: $('#price').val()
     }
-    client.getRestaurantData(filters)
-  });
+
+    client.getRestaurantData(filters, function(restaurantData){
+    	restaurants = restaurantData.restaurants
+    	$('#results').show()
+    	view.appendResults(restaurants[displayedResult])
+    	displayedResult++
+
+   		view.scrollToElement("#results")
+   	})
+  })
+
+	$("div#results").delegate("#nah", "click", function(){
+    $('#result, #results-button').remove()
+		if (displayedResult > restaurants.length - 1){
+			$('#results').append(
+				h('h2', 'No more results. Try searching again!')
+			)
+			displayedResult = 0
+			return
+		}
+  	view.appendResults(restaurants[displayedResult])
+    displayedResult++
+	});
 });

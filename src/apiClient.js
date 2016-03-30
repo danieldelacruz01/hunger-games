@@ -17,7 +17,7 @@ var getCoords = function(address) {
     })
 }
 
-var getRestaurantData = function(filters) {
+var getRestaurantData = function(filters, callback) {
   var query = {
     radius: filters.radius || 500,
     lat:  $('input#lat').val(),
@@ -30,8 +30,10 @@ var getRestaurantData = function(filters) {
     .get('../restaurants')
     .query(query)
     .end(function(err,res){
-      view.createDiv()
-      view.appendResults(res.body)
+    	callback(res.body)
+      // view.createDiv()
+      // view.appendResults(res.body)
+
     })
 }
 
