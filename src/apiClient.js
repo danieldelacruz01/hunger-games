@@ -1,20 +1,20 @@
 var request = require('superagent')
 var $ = require('jquery')
 
-var view = require('./view')
+var getUserParams = function(){
+ var cuisineIds = [];
+  $('input[name=cuisine]:checked').each(function() {
+      cuisineIds.push(this.id)
+  });
+  
+  var distance = parseInt($('input[name=transport]:checked').attr("value"))
 
-var getCoords = function(address) {
-  request
-    .get('http://maps.googleapis.com/maps/api/geocode/json')
-    .query({
-      address: address,
-      key: process.env.GMAPS
-    })
-    .end(function(err,res){
-      var coords = res.body.results[0].geometry.location
-      $('#lat').val(coords.lat)
-      $('#lon').val(coords.lng)
-    })
+  var filters = {
+    cuisines: cuisineIds.join(","),
+    radius: distance,
+    price: $('#price').val()
+  }
+  return filters
 }
 
 var getRestaurantData = function(filters, callback) {
@@ -31,13 +31,10 @@ var getRestaurantData = function(filters, callback) {
     .query(query)
     .end(function(err,res){
     	callback(res.body)
-      // view.createDiv()
-      // view.appendResults(res.body)
-
     })
 }
 
 module.exports = {
-  getRestaurantData: getRestaurantData, 
-  getCoords: getCoords
+  getUserParams: getUserParams,
+  getRestaurantData: getRestaurantData
 }
