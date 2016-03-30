@@ -59,11 +59,14 @@ $(document).ready(function() {
 	})
 
   $('#submit-query').click(function() {
+  	console.log($('#price').val())
     var cuisineIds = [];
     $('input[name=cuisine]:checked').each(function() {
         cuisineIds.push(this.id)
     });
+    
 		var distance = parseInt($('input[name=transport]:checked').attr("value"))
+
     var filters = {
     	cuisines: cuisineIds.join(","),
     	radius: distance,

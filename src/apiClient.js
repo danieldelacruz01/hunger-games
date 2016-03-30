@@ -18,12 +18,8 @@ var getCoords = function(address) {
 }
 
 var getRestaurantData = function(filters) {
-	console.log(filters.cuisines)
   var query = {
-  	// count: 10,
     radius: filters.radius || 500,
-    // sort: 'rating',
-    // order: 'desc',
     lat:  $('input#lat').val(),
     lon:  $('input#lon').val(),
     cuisines: filters.cuisines || null,

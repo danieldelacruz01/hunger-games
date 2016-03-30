@@ -33,9 +33,15 @@ function formatResults(result, queryPrice){
 		resultaurants.restaurants.push(resultObj)
 	}
 
-	var filteredResultaurants = resultaurants.restaurants.filter(function(restaurant){
-		return restaurant.price == queryPrice
-	})
+	if (queryPrice > 0){	
+		var filteredResultaurants = resultaurants.restaurants.filter(function(restaurant){
+			return restaurant.price == queryPrice
+		})
+		var filteredResultaurantsObj = {
+			"restaurants": filteredResultaurants
+		}
+		return filteredResultaurantsObj
+	}
 
 	return resultaurants
 }
@@ -43,20 +49,16 @@ function formatResults(result, queryPrice){
 /* GET restaurants listing. */
 router.get('/', function(req, res, next) {
 
-	console.log(req.query.price, "this is the price set by the user")
-
 	var query = {
-		count: 10,
+		// count: 10,
 		radius: req.query.radius,
 		sort: 'rating',
 		order: 'desc',
 		lat: req.query.lat,
 		lon: req.query.lon,
-		cuisines: req.query.cuisines
+		cuisines: req.query.cuisines || null
 	}
-
 	searchZomato(query, function(apiResult) {
-		// console.log(req.query)
 		var resultaurants = formatResults(apiResult, req.query.price)
 		
 		res.send(resultaurants)
