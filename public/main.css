@@ -9,18 +9,25 @@ hr {
 .jumbotron {
   background-color: #252839 !important;
   height: 95vh;
-}
-.jumbotron h1, .jumbotron h2 {
   color: white !important;
 }
 
-#next {
+.container {
+  padding-top: 50px;
+  padding-bottom: 75px;
+}
+
+.container-fluid {
+  background-color: #252839 !important;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  color: white;
+}
+
+#next, #submit-query {
   border: none;
   background-color: #e62739;
   color: #b5b5b7;
-}
-
-.next-step {
   width: 100%;
   border-radius: 25px !important;
 }
@@ -53,9 +60,20 @@ input[type=range]::-webkit-slider-thumb {
     margin-top: -7px;
 }
 
+#results {
+  background-color: #252839;
+  color: white;
+
+}
+
 #yeah {
   border: none;
   background-color: #e62739;
+  border-radius: 25px !important;
+}
+
+#nah {
+  border-radius: 25px !important;
 }
 
 .restaurant {
