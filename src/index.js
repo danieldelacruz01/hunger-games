@@ -7,7 +7,7 @@ var view = require('./view')
 var location = require('./location')
 
 $(document).ready(function() {
-	$('#filter, #submit-query, #results').hide()
+	$('#filter, #submit-query, #results, #map').hide()
 
 	//prompt user for geolocation data
 	if(navigator.geolocation){
@@ -25,26 +25,26 @@ $(document).ready(function() {
 			$('#filter, #submit-query').show()
 		  view.loadCuisines()
 		  //scroll to cuisines
-	    view.scrollToElement("#select-filters")
+	    view.scrollToElement("#select-filters", 500)
 		}
 	})
+	var restaurants = []
+	var displayedResult = 0
 
   $('#submit-query').click(function(event) {
   	event.preventDefault()
   	$('#result').remove()
+	  
+	  var userFilters = client.getUserParams()
 
-  var userFilters = client.getUserParams()
-	var restaurants = []
-	var displayedResult = 0
+	  client.getRestaurantData(userFilters, function(restaurantData){
+	  	restaurants = restaurantData.restaurants
+	  	$('#results').show()
+	  	view.appendResults(restaurants[displayedResult])
+	  	displayedResult++
 
-  client.getRestaurantData(userFilters, function(restaurantData){
-  	restaurants = restaurantData.restaurants
-  	$('#results').show()
-  	view.appendResults(restaurants[displayedResult])
-  	displayedResult++
-
- 		view.scrollToElement("#results")
- 	})
+	 		view.scrollToElement("#results", 500)
+	 	})
   })
 
 	$("div#results").delegate("#nah", "click", function(){
@@ -57,6 +57,12 @@ $(document).ready(function() {
 			return
 		}
   	view.appendResults(restaurants[displayedResult])
+  	view.scrollToElement("#results", 1)
     displayedResult++
+	});
+	$("div#results").delegate("#yeah", "click", function(){
+    location.displayDirections()
+    $('#map').show()
+    view.scrollToElement("#map", 500)
 	});
 });

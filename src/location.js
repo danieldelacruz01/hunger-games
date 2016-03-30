@@ -55,8 +55,48 @@ var getCoords = function(address) {
     })
 }
 
+var displayDirections = function(){
+	var myLat = $('#lat').val()
+	var myLon = $('#lon').val()
+
+	var directionsDisplay;
+	var directionsService = new google.maps.DirectionsService();
+	var map;
+
+	calcRoute()
+	initialize()
+
+	function initialize() {
+	  directionsDisplay = new google.maps.DirectionsRenderer();
+	  var myLocation = new google.maps.LatLng(myLat, myLon);
+	  var mapOptions = {
+	    zoom:15,
+	    center: myLocation, 
+	    styles: mapStyle
+	  }
+	  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+	  directionsDisplay.setMap(map);
+	}
+
+	function calcRoute() {
+	  var query = {
+	    origin: myLat+","+myLon,
+	    destination:$('#restaurant-address').html(),
+	    travelMode: google.maps.TravelMode.DRIVING
+	  }
+	  directionsService.route(query, function(result, status) {
+	    if (status == google.maps.DirectionsStatus.OK) {
+	      directionsDisplay.setDirections(result);
+	    }
+	  });
+	}
+}
+
+var mapStyle = [{"featureType":"all","stylers":[{"saturation":0},{"hue":"#e7ecf0"}]},{"featureType":"road","stylers":[{"saturation":-70}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"simplified"},{"saturation":-60}]}]
+
 module.exports = {
 	getLocation: getLocation,
 	autocompleteAddress: autocompleteAddress,
-	validateAddressField: validateAddressField
+	validateAddressField: validateAddressField,
+	displayDirections: displayDirections
 }

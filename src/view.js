@@ -39,13 +39,12 @@ var cuisines = [
   {"id": "99","type": "Vietnamese"}
 ]
 
-function scrollToElement(elem){
+function scrollToElement(elem, ms){
   var offset = $(elem).offset();
   $("html, body").animate({
     scrollTop: offset.top
-  }, 500);
+  }, ms);
 }
-
 
 function createDiv(){
   $('div#results').remove()
@@ -61,12 +60,12 @@ function createDiv(){
 function appendResults(resObj){
   $('div#results').append(
     h('div#result.row',
-      h('div.col-xs-4.col-xs-offset-2',
+      h('div.col-sm-4.col-sm-offset-2',
         h('img.restaurant-img.img-thumbnail', {src: resObj.photo})
       ),
-      h('div.col-xs-4',
+      h('div.col-sm-4',
         h('h3.restaurant', resObj.name),
-        h('p', resObj.location.address),
+        h('p#restaurant-address', resObj.location.address),
         h('ul',
           h('li', 'Cuisine: '+resObj.cuisines),
           h('li', 'Rating: '+resObj.rating),
