@@ -1,4 +1,11 @@
+# Environment variables
 .env
+
+# Nightwatch test results
+test/results
+
+# Selenium server
+selenium-server-standalone-2.53.0.jar
 
 # Logs
 logs
