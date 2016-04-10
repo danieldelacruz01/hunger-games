@@ -5,8 +5,7 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "watch-client": "watchify src/index.js -o public/bundle.js -dv",
-    "test": "nightwatch -t test/test.js",
-    "selenium": "java -jar test/selenium-server-standalone-2.53.0.jar"
+    "test": "nightwatch -t test/test.js"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -23,7 +22,6 @@
   },
   "devDependencies": {
     "dotenv": "^2.0.0",
-    "selenium-server": "^2.53.0",
     "nightwatch": "^0.8.18"
   }
 }
