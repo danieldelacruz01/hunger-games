@@ -57,7 +57,7 @@ $(document).ready(function() {
 			return
 		}
   	view.appendResults(restaurants[displayedResult])
-  	view.scrollToElement("#results", 1)
+  	view.scrollToElement("#end", 1)
     displayedResult++
 	});
 	$("div#results").delegate("#yeah", "click", function(){
