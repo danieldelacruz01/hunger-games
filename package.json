@@ -13,13 +13,13 @@
     "hyperscript": "^1.4.7",
     "jquery": "^2.2.2",
     "morgan": "~1.6.1",
-    "superagent": "^1.8.1"
+    "superagent": "^1.8.1",
+    "dotenv": "^2.0.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danieldelacruz01/personal-project.git"
   },
   "devDependencies": {
-    "dotenv": "^2.0.0"
   }
 }
