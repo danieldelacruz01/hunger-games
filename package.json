@@ -9,17 +9,17 @@
   "dependencies": {
     "body-parser": "~1.13.2",
     "debug": "~2.2.0",
+    "dotenv": "^2.0.0",
     "express": "~4.13.1",
     "hyperscript": "^1.4.7",
     "jquery": "^2.2.2",
     "morgan": "~1.6.1",
-    "superagent": "^1.8.1",
-    "dotenv": "^2.0.0"
+    "serve-favicon": "^2.3.0",
+    "superagent": "^1.8.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danieldelacruz01/personal-project.git"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
